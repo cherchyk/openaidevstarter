@@ -7,33 +7,29 @@
 
 # Development
 
-Shift from algorithmic to heuristic software.  Heuristic methods use available data, rather than predefined solutions, to solve machine and human problems. Heuristic solutions are not necessarily provable or accurate, but they are usually good enough to solve small-scale issues that are part of a larger problem.
+## Shift from Algorithmic to Heuristic Software
 
-Heuristics vs. algorithms. An algorithm provides step-by-step instructions for how to solve a specific problem in a finite number of steps. The resulting outcome is predictable and can be reliably reproduced when using the same input. In contrast, heuristic outcomes are simply educated guesses. Heuristic outcomes cannot be predicted or reproduced reliably.
+In the development of software, there has been a shift from algorithmic approaches to heuristic methods. Heuristic methods utilize available data to solve problems, rather than relying on predefined solutions. While heuristic solutions may not always be provable or completely accurate, they are often sufficient for solving small-scale problems within a larger context.
 
-DeepLearning.AI is a great place to start learning development of AI applications.  Team of instructors from Stanford University and deeplearning.ai doing a re great job to be a one-stop-shop for AI education.  They offer a variety of courses, specializations, and professional certificates.  They also offer a free course called AI for Everyone, which is a great introduction to AI for non-technical learners.
+### Heuristics vs. Algorithms
 
-1.	ChatGPT Prompt Engineering for Developers (2h)
-https://learn.deeplearning.ai/chatgpt-prompt-eng
+Algorithms provide step-by-step instructions for solving a specific problem in a finite number of steps. The outcome of an algorithm is predictable and can be reliably reproduced with the same input. On the other hand, heuristic outcomes are educated guesses. They cannot be predicted or reproduced reliably.
 
-2.	LangChain for LLM Application Development (2h)
-https://learn.deeplearning.ai/langchain/
+## DeepLearning.AI for AI Education
 
-3.	LangChain Course
-https://www.youtube.com/playlist?list=PLqZXAkvF1bPNQER9mLmDbntNfSpzdDIU5
+DeepLearning.AI, led by a team of instructors from Stanford University and deeplearning.ai, offers a comprehensive platform for learning AI development. They provide a wide range of courses, specializations, and professional certificates. Additionally, they offer a free course called "AI for Everyone," which serves as an excellent introduction to AI for non-technical learners.
 
-4.	Build natural language solutions with Azure OpenAI Service
-https://learn.microsoft.com/en-gb/training/modules/build-language-solution-azure-openai/
-
-5.	Introduction to Azure OpenAI and Architecture Patterns (Shep Video1)
-https://www.youtube.com/watch?v=TI85JJVPnrM
-Azure OpenAI Chat With Your Data No Code Edition (Shep Video2)
-https://www.youtube.com/watch?v=tFJNasjGM3E
+- [ChatGPT Prompt Engineering for Developers (2h)](https://learn.deeplearning.ai/chatgpt-prompt-eng)
+- [LangChain for LLM Application Development (2h)](https://learn.deeplearning.ai/langchain/)
+- [LangChain Course](https://www.youtube.com/playlist?list=PLqZXAkvF1bPNQER9mLmDbntNfSpzdDIU5)
+- [Build natural language solutions with Azure OpenAI Service](https://learn.microsoft.com/en-gb/training/modules/build-language-solution-azure-openai/)
+- [Introduction to Azure OpenAI and Architecture Patterns (Shep Video1)](https://www.youtube.com/watch?v=TI85JJVPnrM)
+- [Azure OpenAI Chat With Your Data No Code Edition (Shep Video2)](https://www.youtube.com/watch?v=tFJNasjGM3E)
 
 
 # RAG pattern
 
-RAG is a pattern for building a search engine that uses a retriever and a reader. The retriever is a search engine that uses a sparse index to retrieve relevant documents. The reader is a neural network that reads the retrieved documents and extracts the answer to the question. The retriever and reader are trained separately. The retriever is trained on a large corpus of documents and the reader is trained on a dataset of question-answer pairs. The retriever and reader are combined to create a search engine that can answer questions.
+The RAG (Retrieval Augmented Generation) pattern combines Information Retrieval with Generative AI capability to provide answers instead of document matches. It can be combined with a Conversational AI front-end to provide a more engaging experience to the user.
 
     ******* REDO
     | | Semantic Kernel | LangChain  | LlamaIndex |
