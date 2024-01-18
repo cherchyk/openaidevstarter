@@ -19,8 +19,22 @@ Algorithms provide step-by-step instructions for solving a specific problem in a
 
 DeepLearning.AI, led by a team of instructors from Stanford University and deeplearning.ai, offers a comprehensive platform for learning AI development. They provide a wide range of courses, specializations, and professional certificates. Additionally, they offer a free course called "AI for Everyone," which serves as an excellent introduction to AI for non-technical learners.
 
-- [ChatGPT Prompt Engineering for Developers (2h)](https://learn.deeplearning.ai/chatgpt-prompt-eng)
-- [LangChain for LLM Application Development (2h)](https://learn.deeplearning.ai/langchain/)
+- [ChatGPT Prompt Engineering for Developers (2h)](https://learn.deeplearning.ai/chatgpt-prompt-eng) and [LangChain for LLM Application Development (2h)](https://learn.deeplearning.ai/langchain/) are great courses to learn prompting techniques.
+- [LangChain Chat with Your Data (2h)](https://learn.deeplearning.ai/langchain-chat-with-your-data/) is a great course that demonstrates RAG using LangChain.
+- [How Business Thinkers Can Start Building AI Plugins With Semantic Kernel](https://learn.deeplearning.ai/microsoft-semantic-kernel/) introduces Semantic Kernel (SK) and demonstrates how to use it to build AI plugins.
+
+Quality
+- [Evaluating and Debugging Generative AI](https://learn.deeplearning.ai/evaluating-debugging-generative-ai) is a course that explains how to use LLM to validate responses.
+- [Quality and Safety for LLM Applications](https://learn.deeplearning.ai/quality-safety-llm-applications/) another great aualty and safety of outputs. 
+
+Great intro courses to Vector DBs.
+- [Advanced Retrieval for AI with Chroma (2h)](https://learn.deeplearning.ai/advanced-retrieval-for-ai/)
+- [Vector Databases: from Embeddings to Applications (2h)](https://learn.deeplearning.ai/vector-databases-embeddings-applications/) - leveerages Weaviate
+
+Visit [DeepLearning.AI Short Courses](https://learn.deeplearning.ai/) for more great courses.  DeepLearning.AI is constanly adds new courses so it is recommended to check back often.
+
+### Additional resources for learning about AI development include:
+
 - [LangChain Course](https://www.youtube.com/playlist?list=PLqZXAkvF1bPNQER9mLmDbntNfSpzdDIU5)
 - [Build natural language solutions with Azure OpenAI Service](https://learn.microsoft.com/en-gb/training/modules/build-language-solution-azure-openai/)
 - [Introduction to Azure OpenAI and Architecture Patterns (Shep Video1)](https://www.youtube.com/watch?v=TI85JJVPnrM)
