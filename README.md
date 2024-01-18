@@ -29,37 +29,25 @@ DeepLearning.AI, led by a team of instructors from Stanford University and deepl
 
 # RAG pattern
 
-The RAG (Retrieval Augmented Generation) pattern combines Information Retrieval with Generative AI capability to provide answers instead of document matches. It can be combined with a Conversational AI front-end to provide a more engaging experience to the user.
 
-    ******* REDO
-    | | Semantic Kernel | LangChain  | LlamaIndex |
-    | --- | --- | --- | --- |
-    | Loading | No | Yes | Yes |
-    | Chunking | No | Yes | Yes |
-    | Retrieval | Yes | Yes | Yes |
-    | - Retrieval: Child To Parent | No | No | Yes |
-    | - Retrieval: Window | No | No | Yes |
+The RAG (Retrieval-Augmented Generation) pattern used with Large Language Models (LLMs) like GPT-3 is a machine learning approach that enhances the capabilities of generative models by combining them with retrieval-based models. This technique allows the LLM to access a broader range of information than what is contained in its training data, improving its performance in tasks that require specific, detailed, or up-to-date knowledge.
 
-Semantic Kernel, combined with [Kernel Memory](https://github.com/microsoft/kernel-memory), can be utilized to implement the Retrieval-Augmented Generation (RAG) pattern.
-
-[LangChain Chat With Your Data](https://learn.deeplearning.ai/langchain-chat-with-your-data) is a course that covers loading, chunking, and retrieval tactics using LangChain.
-
-The article [Advanced RAG: Small to Big Retrieval](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4) discusses Child-Parent Recursive Retriever and Sentence Window Retrieval with LlamaIndex. It also explores retrieval strategies such as Child to Parent and Window.
-
-![rag](content/imgs/rag.png)
+[LangChain Chat With Your Data](https://learn.deeplearning.ai/langchain-chat-with-your-data) is a course that covers loading, chunking, and retrieval tactics used in RAG pattern leveraging LangChain.  The article [Advanced RAG: Small to Big Retrieval](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4) discusses Child-Parent Recursive Retriever and Sentence Window Retrieval with LlamaIndex. It also explores retrieval strategies such as Child to Parent and Window.  Semantic Kernel, combined with [Kernel Memory](https://github.com/microsoft/kernel-memory), can be utilized to implement the Retrieval-Augmented Generation (RAG) pattern.
 
 ## RAG steps
+
+![rag](content/imgs/rag.png)
 
 ### 1. Loading
 
 LangChain has implemented loading from different sources and of different formats.  Semantic Kernel had this features  initially but later it was extracted to [Kernel Memory](https://github.com/microsoft/kernel-memory)
 
-### 2. Chunking
+### 2. Chunking or Splitting
 Automatic chunking is challenging when we have documents of different formats. We have customers who converted important PDFs to text and then manually chunked them. This way, they were able to get the best results during the retrieval step and later the completion.
 
 > Chunking is a very important step in RAG pattern.  It is not only about the size of the chunk but also about the content.  If we have a document with 100 pages and only 1 page is relevant to the question, we need to chunk it in a way that the relevant page is in a separate chunk.  This way we will be able to retrieve the relevant chunk and then use it to engineer promt.
 
-### 3. Saving to Vector DB and Embedding
+### 3. Embedding and Storage to Vector DB
 
 
 It's important to use the same model for creating embeddings of both chunks and questions. This helps in getting better results when retrieving information and completing tasks. If organizations keep adding new documents, they might face a problem if the original embedding model they use becomes outdated and unavailable. Using a new model could lead to bad search results because it creates different embeddings. To avoid this, consider these options:
@@ -85,7 +73,7 @@ LangChain has also implemented a couple of strategies for retrieval.
 
 ### 5. Prompting
 
--------------------TODO
+Great list of strategies and tactics for prompting can be found here: https://platform.openai.com/docs/guides/prompt-engineering/strategy-provide-reference-text
 
 # Vector DBs
 
