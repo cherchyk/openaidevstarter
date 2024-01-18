@@ -1,4 +1,4 @@
-ORIGIN_OPENAI_API_KEY=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
+
 
 # Set this to `azure`
 OPENAI_API_TYPE=azure
