@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "SKExp.ConsoleApp8": {
+      "commandName": "Project",
+      "commandLineArgs": "exp6 logs"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}

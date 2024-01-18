@@ -1,0 +1,17 @@
+ORIGIN_OPENAI_API_KEY=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
+
+# Set this to `azure`
+OPENAI_API_TYPE=azure
+# The API version you want to use: set this to `2023-05-15` for the released version.
+OPENAI_API_VERSION=2023-05-15
+# The base URL for your Azure OpenAI resource.  You can find this in the Azure portal under your Azure OpenAI resource.
+OPENAI_API_BASE=xxxxxxxxxxxxxxxxxx
+# The API key for your Azure OpenAI resource.  You can find this in the Azure portal under your Azure OpenAI resource.
+OPENAI_API_KEY=xxxxxxxxxxxxxxxxxx
+
+
+LANGCHAIN_TRACING_V2="false"
+LANGCHAIN_API_KEY=""
+
+SERPAPI_API_KEY="xxxxxxxxxxxxxxxxxx"
+SERPER_API_KEY="xxxxxxxxxxxxxxxxxx"

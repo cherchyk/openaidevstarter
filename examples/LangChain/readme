@@ -1,0 +1,3 @@
+pip3 install langchain --upgrade
+pip3 install numexpr
+pip3 install tiktoken
