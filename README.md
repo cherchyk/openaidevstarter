@@ -1,25 +1,56 @@
 
-
-This repository aims to document the journey of learning how to use Large Language Models (LLMs) for AI development. It will cover topics such as the RAG pattern, Vector DBs, Semantic Kernel, LangChain, and Microsoft Copilot Studio (PVA) for LLM development.
-
 # Contents
 
-1. [Resources to learn about LLMs](#llm)
-1. [Development using LLMs](#development)
-1. [SDK](#sdk)
-1. [RAG pattern](#rag-pattern)
-1. [Vector DBs](#vector-dbs)
-1. [Main challenges](#main-challenges)
-1. [Microsoft Copilot Studio (PVA)](#microsoft-copilot-studio-pva)
+1. [Introduction](#introduction)
+2. [Suggested Learning](#suggested-learning)
+3. [Development](#development)
+    - [SDKs / Frameworks](#sdks--frameworks)
+    - [RAG pattern](#rag-pattern)
+    - [Orchestration / Agents](#orchestration--agents)
+4. [Microsoft Copilot Studio - No Code / Low Code Development](#microsoft-copilot-studio---no-code--low-code-development)
+5. [Vector DBs](#vector-dbs)
 
+# Introduction
 
-# LLM
-- [Intro to Large Language Models (Andrej Karpathy) (1h)](https://www.youtube.com/watch?v=zjkBMFhNj_g) - Short intro to LLMs
-- [Generative AI with Large Language Models (20h)](https://www.coursera.org/learn/generative-ai-with-llms) - Absolutly amazing course that gives a strong boost into understanding of LLMs.
+This repository aims to document the journey of learning how to use Large Language Models (LLMs) in app development. It will cover topics such as the RAG pattern, Vector DBs, Semantic Kernel, LangChain, and Microsoft Copilot Studio.
+
+# Suggested Learning Resources
+
+This section contains a list of recommended learning resources. It is recommended to follow the order of the courses listed below.
+
+## LLM
+- [Generative AI with Large Language Models (20+h)](https://www.coursera.org/learn/generative-ai-with-llms) - an amazing introductory course that provides a strong understanding of LLMs. Alternatively, you can watch the shorter [Intro to Large Language Models (1h)](https://www.youtube.com/watch?v=zjkBMFhNj_g).
+
+## App Development
+
+> DeepLearning.AI is often recomened in this section. DeepLearning.AI is led by a team of instructors from Stanford University and deeplearning.ai, offers a comprehensive platform for learning AI development. They provide a wide range of courses, specializations, and professional certificates.
+
+- [ChatGPT Prompt Engineering for Developers (2h)](https://learn.deeplearning.ai/chatgpt-prompt-eng) and the [Prompt Engineering](https://platform.openai.com/docs/guides/prompt-engineering) article from OpenAI are recommended resources for learning prompting techniques.
+- [LangChain for LLM Application Development (2h)](https://learn.deeplearning.ai/langchain/) provides insights into using LangChain for LLM development.
+- [LangChain Chat with Your Data (2h)](https://learn.deeplearning.ai/langchain-chat-with-your-data/) is a course that demonstrates the use of LangChain for the RAG pattern.
+- [How Business Thinkers Can Start Building AI Plugins With Semantic Kernel](https://learn.deeplearning.ai/microsoft-semantic-kernel/) introduces Semantic Kernel (SK) and provides guidance on building AI plugins with it.
+
+### Quality.
+- [Evaluating and Debugging Generative AI](https://learn.deeplearning.ai/evaluating-debugging-generative-ai) is a course that explains how to use LLM to validate responses.
+- [Quality and Safety for LLM Applications](https://learn.deeplearning.ai/quality-safety-llm-applications/) another great quality and safety of outputs. 
+
+### Introductory courses to Vector DBs.
+- [Advanced Retrieval for AI with Chroma (2h)](https://learn.deeplearning.ai/advanced-retrieval-for-ai/)
+- [Vector Databases: from Embeddings to Applications (2h)](https://learn.deeplearning.ai/vector-databases-embeddings-applications/) - utilizes Weaviate
+
+For more great courses on LLMs, visit [DeepLearning.AI Short Courses](https://learn.deeplearning.ai/). DeepLearning.AI constantly adds new courses, so it is recommended to check back often. As of the beginning of 2024, DeepLearning.AI remains one of the foundational sources for learning about LLMs and app development.
+
+### Additional resources
+
+- [LangChain Course](https://www.youtube.com/playlist?list=PLqZXAkvF1bPNQER9mLmDbntNfSpzdDIU5): A comprehensive course exposing interesting patterns, although code samples could be outdated.
+- [Develop Generative AI solutions with Azure OpenAI Service](https://learn.microsoft.com/en-gb/training/paths/develop-ai-solutions-azure-openai/): Light courses from Microsoft.
+- Short but very saturated videos on Azure Open AI:
+    - [Introduction to Azure OpenAI and Architecture Patterns](https://www.youtube.com/watch?v=TI85JJVPnrM)
+    - [Azure OpenAI Chat With Your Data No Code Edition](https://www.youtube.com/watch?v=tFJNasjGM3E)
 
 # Development
 
-## Shift from Algorithmic to Heuristic Software
+### Shift from Algorithmic to Heuristic Software
 
 In software development , there has been a shift from algorithmic approaches to heuristic methods. Heuristic methods utilize available data to solve problems, rather than relying on predefined solutions. While heuristic solutions may not always be provable or completely accurate, they are often sufficient for solving small-scale problems within a larger context.
 
@@ -27,51 +58,50 @@ In software development , there has been a shift from algorithmic approaches to 
 
 Algorithms provide step-by-step instructions for solving a specific problem in a finite number of steps. The outcome of an algorithm is predictable and can be reliably reproduced with the same input. On the other hand, heuristic outcomes are educated guesses. They cannot be predicted or reproduced reliably.
 
-## DeepLearning.AI for AI Education
+## SDKs / Frameworks
 
-DeepLearning.AI, led by a team of instructors from Stanford University and deeplearning.ai, offers a comprehensive platform for learning AI development. They provide a wide range of courses, specializations, and professional certificates. Additionally, they offer a free course called "AI for Everyone," which serves as an excellent introduction to AI for non-technical learners.
+When developing AI solutions, you have the option to use API libraries or SDKs/Frameworks. While it is possible to use only API libraries, using SDKs/Frameworks can help you develop solutions faster and with less code. It is recommended to use SDKs/Frameworks whenever possible.
 
-- [ChatGPT Prompt Engineering for Developers (2h)](https://learn.deeplearning.ai/chatgpt-prompt-eng) and [LangChain for LLM Application Development (2h)](https://learn.deeplearning.ai/langchain/) are great courses to learn prompting techniques.
-- [LangChain Chat with Your Data (2h)](https://learn.deeplearning.ai/langchain-chat-with-your-data/) is a great course that demonstrates RAG using LangChain.
-- [How Business Thinkers Can Start Building AI Plugins With Semantic Kernel](https://learn.deeplearning.ai/microsoft-semantic-kernel/) introduces Semantic Kernel (SK) and demonstrates how to use it to build AI plugins.
+> **Important Note:** Code-related educational material can quickly become obsolete due to the constant evolution of libraries and SDKs. It is recommended for learners to focus on application development patterns rather than specific syntax, as patterns are more resistant to change.
 
-Quality
-- [Evaluating and Debugging Generative AI](https://learn.deeplearning.ai/evaluating-debugging-generative-ai) is a course that explains how to use LLM to validate responses.
-- [Quality and Safety for LLM Applications](https://learn.deeplearning.ai/quality-safety-llm-applications/) another great aualty and safety of outputs. 
-
-Great intro courses to Vector DBs.
-- [Advanced Retrieval for AI with Chroma (2h)](https://learn.deeplearning.ai/advanced-retrieval-for-ai/)
-- [Vector Databases: from Embeddings to Applications (2h)](https://learn.deeplearning.ai/vector-databases-embeddings-applications/) - leveerages Weaviate
-
-Visit [DeepLearning.AI Short Courses](https://learn.deeplearning.ai/) for more great courses.  DeepLearning.AI is constanly adds new courses so it is recommended to check back often.
-
-### Additional resources for learning about AI development include:
-
-- [LangChain Course](https://www.youtube.com/playlist?list=PLqZXAkvF1bPNQER9mLmDbntNfSpzdDIU5)
-- [Build natural language solutions with Azure OpenAI Service](https://learn.microsoft.com/en-gb/training/modules/build-language-solution-azure-openai/)
-- [Introduction to Azure OpenAI and Architecture Patterns (Shep Video1)](https://www.youtube.com/watch?v=TI85JJVPnrM)
-- [Azure OpenAI Chat With Your Data No Code Edition (Shep Video2)](https://www.youtube.com/watch?v=tFJNasjGM3E)
+|                     | [OpenAI](https://platform.openai.com/docs/libraries/python-library)  | [Azure Open AI](https://learn.microsoft.com/en-us/azure/ai-services/openai/supported-languages) | [Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/overview/) | [LangChain](https://www.langchain.com/)       | [LlamaIndex](https://www.llamaindex.ai/)      |
+| ------------------- | ----------- | ----------------- | --------------- | --------------- | --------------- |
+|                     | API Library | API Library / Service SDK | SDK / Framework | SDK / Framework | SDK / Framework |
+| Open Source              | yes         | yes               | yes             | yes             | yes             |
+| OpenAI and Azure OpenAI models | yes         | yes               | yes             | yes             | yes             |
+|                     |             |                   |                 |                 |                 |
+| Framework Features (Memory, Orchestration, Agents...) |  -        |  -                | yes             | yes             | yes             |
+|                     |             |                   |                 |                 |                 |
+| C#                  | yes         | yes               | yes             |  -              |  -              |
+| Python              | yes         | yes               | yes             | yes             | yes             |
+| JS                  | yes         | yes               |  -              | yes             | yes             |
 
 
-# SDK
+> The table above shows only three languages, but API libraries are available for many more languages. It is also important to note that updates in models are first reflected in API libraries and later frameworks.
 
-From courses listed above you may seee that there are many different SDKs that can be used to develop AI solutions.
+Python has traditionally had the largest community for AI research and development. However, the C# AI community is rapidly growing thanks to the advancements in Semantic Kernel. On the other hand, JavaScript, despite being a popular language, currently lacks a mature representation in the LLM domain.
 
-## Samples
 
+### Code Samples
 This repo contains samples for the following SDKs:
 
-- [Semantic Kernel (SK), C#, .NET 8](/examples/CSharp/)
-- [LangChain, Python](/examples/LangChain/)
-
-# RAG pattern
+- [Semantic Kernel, C#, .NET 8](/samples/CSharp/)
+- [LangChain, Python](/samples/LangChain/)
 
 
+
+### Performance, Stability, Cost
+- Latency is a significant challenge in call centers where AI-powered virtual agents assist human agents. To mitigate the wait time, call centers often utilize call-waiting messages. Interfaces that incorporate visual UI can enhance response time by leveraging Streaming. For more information, refer to the [OpenAI Streaming](https://platform.openai.com/docs/api-reference/streaming) and [Azure Open AI API reference](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference#:~:text=stream) documentation.
+- LangChain and LlamaIndex provide an optional caching (LlamaIndex also offers remote cache management). This feature offers two advantages: it can help reduce costs by minimizing the number of API calls to the LLM provider and improve responsiveness.
+
+
+
+##  RAG pattern
 The RAG (Retrieval-Augmented Generation) pattern used with Large Language Models (LLMs) like GPT-3 is a machine learning approach that enhances the capabilities of generative models by combining them with retrieval-based models. This technique allows the LLM to access a broader range of information than what is contained in its training data, improving its performance in tasks that require specific, detailed, or up-to-date knowledge.
 
 [LangChain Chat With Your Data](https://learn.deeplearning.ai/langchain-chat-with-your-data) is a course that covers loading, chunking, and retrieval tactics used in RAG pattern leveraging LangChain.  The article [Advanced RAG: Small to Big Retrieval](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4) discusses Child-Parent Recursive Retriever and Sentence Window Retrieval with LlamaIndex. It also explores retrieval strategies such as Child to Parent and Window.  Semantic Kernel, combined with [Kernel Memory](https://github.com/microsoft/kernel-memory), can be utilized to implement the Retrieval-Augmented Generation (RAG) pattern.
 
-## RAG steps
+### RAG steps
 
 ![rag](content/imgs/rag.png)
 
@@ -79,10 +109,10 @@ The RAG (Retrieval-Augmented Generation) pattern used with Large Language Models
 
 LangChain has implemented loading from different sources and of different formats.  Semantic Kernel had this features  initially but later it was extracted to [Kernel Memory](https://github.com/microsoft/kernel-memory)
 
-### 2. Chunking or Splitting
+### 2. Chunking / Splitting
 Automatic chunking is challenging when we have documents of different formats. We have customers who converted important PDFs to text and then manually chunked them. This way, they were able to get the best results during the retrieval step and later the completion.
 
-> Chunking is a very important step in RAG pattern.  It is not only about the size of the chunk but also about the content.  If we have a document with 100 pages and only 1 page is relevant to the question, we need to chunk it in a way that the relevant page is in a separate chunk.  This way we will be able to retrieve the relevant chunk and then use it to engineer promt.
+> Chunking is a crucial step in the RAG pattern. It involves not only considering the size of the chunk but also the content. For instance, if we have a document with 100 pages and only 1 paragraph is relevant to the question, we should chunk it in a way that separates the relevant paragraph into its own chunk. This allows us to retrieve the specific chunk and use it to generate a prompt.
 
 ### 3. Embedding and Storage to Vector DB
 
@@ -112,42 +142,14 @@ LangChain has also implemented a couple of strategies for retrieval.
 
 Great list of strategies and tactics for prompting can be found here: https://platform.openai.com/docs/guides/prompt-engineering/strategy-provide-reference-text
 
-# Vector DBs
 
-Vector databases are a new class of databases that are optimized for storing and querying vector data. They are designed to handle large volumes of vector data and provide fast, efficient, and scalable access to it. Vector databases are used in a wide range of applications, including machine learning, computer vision, natural language processing, and more.
+## Orchestration / Agents
 
+it is a ToDo section
 
+# Microsoft Copilot Studio - No Code / Low Code Development
 
-
-The following table offers a comprehensive overview of each vector database across a range of characteristics, including their type, storage engine, indexing mechanism, query capabilities, scalability, and more. It helps in evaluating and comparing these databases based on various technical and operational aspects.
-
-
-Pinecone, Milvus, Faiss by Meta, Chroma DB, Vald, Vespa, Elasticsearch, Deep Lake, Faiss, Qdrant, Weaviate, Azure AI Search
-
-
-| Characteristic / Vector DB|Database Type|Storage Engine|Indexing Mechanism|Query Capabilities|Scalability|Performance|Supported Data Types|Integration and Compatibility|Security Features|Ease of Use|Community and Support|Licensing and Pricing|High Availability and Disaster Recovery|Customization and Extensibility|
-|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|
-|Pinecone|Vector database|Cloud-native, Kubernetes|FAISS, hybrid search|Nearest neighbor, filtered|Billions of vectors|Low latency, high speed|Dense, sparse vectors|ML frameworks, cloud|Metadata key-value pairs|Simple API, user-friendly|Community support|Managed service|Cloud-native, managed|API for CRUD operations|
-|Milvus|Vector database|Separates storage and compute|ANNS, multiple index types|Similarity search, DML/DDL|Horizontal scalability|Blazing fast, hardware efficient|Dense, sparse vectors|ML models, diverse environments|Isolated system components|Intuitive SDKs, easy setup|Extensive community, GitHub|Open-source, Apache 2.0 license|High availability, resilient|Flexible, feature-rich|
-|Faiss by Meta|Library for similarity search|In-memory, GPU support|Various indexing methods (HNSW, PQ, etc.)|Nearest-neighbor search|Scalable on large datasets|High-performance, especially on GPU|High-dimensional vectors|C++/Python interfaces, integrates with machine learning frameworks|Not specified|User-friendly, with Python and C++ support|Extensive community and support|Open-source|GPU support enhances availability|Highly customizable, supports various algorithms|
-|Chroma DB|Vector database|Not specified|Not specified|Search, filtering, query by embeddings or texts|Not specified|Not specified|Embeddings, metadata|Integrates with LangChain, LlamaIndex, OpenAI|Not specified|Simple API for Python and JavaScript|Not specified|Open-source (Apache 2.0 license)|Not specified|Not specified|
-|Vald|Distributed vector DBMS|Cloud-Native architecture|Fastest ANN Algorithm NGT|Approximate nearest neighbor search|Highly scalable, distributed|Fast, distributed search engine|Dense vectors|Supports multiple languages (Golang, Java, Node.js, Python)|Customizable Ingress/Egress filtering|Easy to install and use|Active GitHub repository, Slack community|Open-source (Apache 2.0 license)|Auto Indexing Backup, Index Replication|Highly customizable, can configure vector dimensions, replicas|
-|Vespa|Vector database|Distributed, scalable|ANN, lexical, structured|Search, recommendation, AI|Large datasets, high loads|Low-latency, high-performance|Structured, text, vector|Machine learning support|Secured, customizable|Customizable, extendable|Extensive documentation|Open Source, Apache 2.0|High availability, reliability|Application components, ML|
-|Elasticsearch|Vector database|Lucene-based, disk storage|Lucene HNSW, ANN|Hybrid retrieval, ANN, kNN|Scales beyond RAM size|Efficient, scalable search|Unstructured, semi-structured|ML, Elastic Stack integration|Indexing, searching security|Powerful APIs, user-friendly|Robust community, support|Open Source, commercial|Incremental snapshots, reliable|Flexible APIs, integrations|
-|Deep Lake|Vector database|Multi-modal, serverless|Tensor-based, multi-modal|Embedding, metadata, multi-modal|High-performance, scalable|Fast streaming, query execution|All AI data types, multi-modal|PyTorch, TensorFlow, LangChain|Data versioning, secure storage|Python API, easy setup|Community-driven, active support|Open Source, MPL-2.0|Serverless, efficient data handling|Customizable, multi-modal support|
-|Qdrant|Vector database|Cloud-native|HNSW algorithm|Nearest neighbors, filterable|Scales horizontally|Fast and accurate|Various data types|API in many languages|Not specified|Easy to use API|GitHub community|Open-source|Not specified|Payload filtering, custom logic|
-|Weaviate|Vector database|Cloud-native|HNSW algorithm|Vector and scalar search|Horizontally scalable|Fast queries|Text, images, etc.|GraphQL, REST, language clients|Not specified|User-friendly|GitHub community|Open-source|High availability (roadmap)|Modules, custom models|
-|Azure AI Search|Cloud-based vector database|Azure infrastructure|Vector fields, embedding models|Text, image, multilingual, hybrid|Scalable service|High-performance|Text, images, various|Azure services integration|Azure security features|Simplified wizard setup|Azure community, support|Azure pricing model|Azure reliability|Configurable, chunking strategy|
-
-
-# Main challenges
-
-- Libraries evolve constantly, making code-related educational material quickly obsolete. Learners must focus on code patterns rather than syntax, as patterns are more resistant to change. Updates to Semantic Kernel (SK) and LangChain (LC) may break existing code, requiring constant updates to learning material.
-
-- Latency remains a significant challenge for call center scenarios using AI-powered virtual agents. Call center partners often use call-waiting messages to fill the wait time.
-
-
-# Microsoft Copilot Studio (PVA) - ToDo
+it is a ToDo section
 
 Here are some resources related to Microsoft Copilot Studio:
 
@@ -170,6 +172,31 @@ You can find more information about Copilot Studio at the following links:
 - [Sizzle video](https://aka.ms/copilotstudiosizzle)
 - [Product documentation](https://aka.ms/copilotstudiodocs)
 - [Community page](https://aka.ms/copilotstudiocommunity)
+
+
+
+# Vector DBs
+
+Vector databases are a new class of databases that are optimized for storing and querying vector data. They are designed to handle large volumes of vector data and provide fast, efficient, and scalable access to it. Vector databases are commonly used for RAG pattern and Semantic Caching.
+
+The following table offers an overview of common vector database across a range of characteristics. It helps in evaluating and comparing these databases based on various technical and operational aspects.
+
+// TODO: review table
+
+| Characteristic / Vector DB|Database Type|Storage Engine|Indexing Mechanism|Query Capabilities|Scalability|Performance|Supported Data Types|Integration and Compatibility|Security Features|Ease of Use|Community and Support|Licensing and Pricing|High Availability and Disaster Recovery|Customization and Extensibility|
+|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|:----|
+|Pinecone|Vector database|Cloud-native, Kubernetes|FAISS, hybrid search|Nearest neighbor, filtered|Billions of vectors|Low latency, high speed|Dense, sparse vectors|ML frameworks, cloud|Metadata key-value pairs|Simple API, user-friendly|Community support|Managed service|Cloud-native, managed|API for CRUD operations|
+|Milvus|Vector database|Separates storage and compute|ANNS, multiple index types|Similarity search, DML/DDL|Horizontal scalability|Blazing fast, hardware efficient|Dense, sparse vectors|ML models, diverse environments|Isolated system components|Intuitive SDKs, easy setup|Extensive community, GitHub|Open-source, Apache 2.0 license|High availability, resilient|Flexible, feature-rich|
+|Faiss by Meta|Library for similarity search|In-memory, GPU support|Various indexing methods (HNSW, PQ, etc.)|Nearest-neighbor search|Scalable on large datasets|High-performance, especially on GPU|High-dimensional vectors|C++/Python interfaces, integrates with machine learning frameworks|Not specified|User-friendly, with Python and C++ support|Extensive community and support|Open-source|GPU support enhances availability|Highly customizable, supports various algorithms|
+|Chroma DB|Vector database|Not specified|Not specified|Search, filtering, query by embeddings or texts|Not specified|Not specified|Embeddings, metadata|Integrates with LangChain, LlamaIndex, OpenAI|Not specified|Simple API for Python and JavaScript|Not specified|Open-source (Apache 2.0 license)|Not specified|Not specified|
+|Vald|Distributed vector DBMS|Cloud-Native architecture|Fastest ANN Algorithm NGT|Approximate nearest neighbor search|Highly scalable, distributed|Fast, distributed search engine|Dense vectors|Supports multiple languages (Golang, Java, Node.js, Python)|Customizable Ingress/Egress filtering|Easy to install and use|Active GitHub repository, Slack community|Open-source (Apache 2.0 license)|Auto Indexing Backup, Index Replication|Highly customizable, can configure vector dimensions, replicas|
+|Vespa|Vector database|Distributed, scalable|ANN, lexical, structured|Search, recommendation, AI|Large datasets, high loads|Low-latency, high-performance|Structured, text, vector|Machine learning support|Secured, customizable|Customizable, extendable|Extensive documentation|Open Source, Apache 2.0|High availability, reliability|Application components, ML|
+|Elasticsearch|Vector database|Lucene-based, disk storage|Lucene HNSW, ANN|Hybrid retrieval, ANN, kNN|Scales beyond RAM size|Efficient, scalable search|Unstructured, semi-structured|ML, Elastic Stack integration|Indexing, searching security|Powerful APIs, user-friendly|Robust community, support|Open Source, commercial|Incremental snapshots, reliable|Flexible APIs, integrations|
+|Deep Lake|Vector database|Multi-modal, serverless|Tensor-based, multi-modal|Embedding, metadata, multi-modal|High-performance, scalable|Fast streaming, query execution|All AI data types, multi-modal|PyTorch, TensorFlow, LangChain|Data versioning, secure storage|Python API, easy setup|Community-driven, active support|Open Source, MPL-2.0|Serverless, efficient data handling|Customizable, multi-modal support|
+|Qdrant|Vector database|Cloud-native|HNSW algorithm|Nearest neighbors, filterable|Scales horizontally|Fast and accurate|Various data types|API in many languages|Not specified|Easy to use API|GitHub community|Open-source|Not specified|Payload filtering, custom logic|
+|Weaviate|Vector database|Cloud-native|HNSW algorithm|Vector and scalar search|Horizontally scalable|Fast queries|Text, images, etc.|GraphQL, REST, language clients|Not specified|User-friendly|GitHub community|Open-source|High availability (roadmap)|Modules, custom models|
+|Azure AI Search|Cloud-based vector database|Azure infrastructure|Vector fields, embedding models|Text, image, multilingual, hybrid|Scalable service|High-performance|Text, images, various|Azure services integration|Azure security features|Simplified wizard setup|Azure community, support|Azure pricing model|Azure reliability|Configurable, chunking strategy|
+
 
 
 
