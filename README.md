@@ -105,16 +105,16 @@ The RAG (Retrieval-Augmented Generation) pattern used with Large Language Models
 
 ![rag](content/imgs/rag.png)
 
-### 1. Loading
+#### 1. Loading
 
 LangChain has implemented loading from different sources and of different formats.  Semantic Kernel had this features  initially but later it was extracted to [Kernel Memory](https://github.com/microsoft/kernel-memory)
 
-### 2. Chunking / Splitting
+#### 2. Chunking / Splitting
 Automatic chunking is challenging when we have documents of different formats. We have customers who converted important PDFs to text and then manually chunked them. This way, they were able to get the best results during the retrieval step and later the completion.
 
 > Chunking is a crucial step in the RAG pattern. It involves not only considering the size of the chunk but also the content. For instance, if we have a document with 100 pages and only 1 paragraph is relevant to the question, we should chunk it in a way that separates the relevant paragraph into its own chunk. This allows us to retrieve the specific chunk and use it to generate a prompt.
 
-### 3. Embedding and Storage to Vector DB
+#### 3. Embedding and Storage to Vector DB
 
 
 It's important to use the same model for creating embeddings of both chunks and questions. This helps in getting better results when retrieving information and completing tasks. If organizations keep adding new documents, they might face a problem if the original embedding model they use becomes outdated and unavailable. Using a new model could lead to bad search results because it creates different embeddings. To avoid this, consider these options:
@@ -126,7 +126,7 @@ It's important to use the same model for creating embeddings of both chunks and 
 Some Vector DBs will automatically get embedding as you save text.
 Weaviate Course - https://learn.deeplearning.ai/vector-databases-embeddings-applications  
 
-### 4. Retrieval
+#### 4. Retrieval
 
 There are different strategies for retrieval. Some DBs provide configurable hybrid retrieval strategies. The retrieval practices are evolving, and we see that VectorDBs are taking ownership over this step as it makes sense to filter data as close to the data source as possible. They are adding more and more features to support different retrieval strategies.
 
@@ -138,7 +138,7 @@ Here are some resources for advanced retrieval tactics:
 
 LangChain has also implemented a couple of strategies for retrieval.
 
-### 5. Prompting
+#### 5. Prompting
 
 Great list of strategies and tactics for prompting can be found here: https://platform.openai.com/docs/guides/prompt-engineering/strategy-provide-reference-text
 
