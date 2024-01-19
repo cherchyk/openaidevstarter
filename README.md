@@ -1,15 +1,27 @@
 
 
+This repository aims to document the journey of learning how to use Large Language Models (LLMs) for AI development. It will cover topics such as the RAG pattern, Vector DBs, Semantic Kernel, LangChain, and Microsoft Copilot Studio (PVA) for LLM development.
+
+# Contents
+
+1. [Resources to learn about LLMs](#llm)
+1. [Development using LLMs](#development)
+1. [SDK](#sdk)
+1. [RAG pattern](#rag-pattern)
+1. [Vector DBs](#vector-dbs)
+1. [Main challenges](#main-challenges)
+1. [Microsoft Copilot Studio (PVA)](#microsoft-copilot-studio-pva)
+
 
 # LLM
-- Intro to Large Language Models (Andrej Karpathy) (1h) https://www.youtube.com/watch?v=zjkBMFhNj_g
-- Generative AI with Large Language Models (20h) https://www.coursera.org/learn/generative-ai-with-llms 
+- [Intro to Large Language Models (Andrej Karpathy) (1h)](https://www.youtube.com/watch?v=zjkBMFhNj_g) - Short intro to LLMs
+- [Generative AI with Large Language Models (20h)](https://www.coursera.org/learn/generative-ai-with-llms) - Absolutly amazing course that gives a strong boost into understanding of LLMs.
 
 # Development
 
 ## Shift from Algorithmic to Heuristic Software
 
-In the development of software, there has been a shift from algorithmic approaches to heuristic methods. Heuristic methods utilize available data to solve problems, rather than relying on predefined solutions. While heuristic solutions may not always be provable or completely accurate, they are often sufficient for solving small-scale problems within a larger context.
+In software development , there has been a shift from algorithmic approaches to heuristic methods. Heuristic methods utilize available data to solve problems, rather than relying on predefined solutions. While heuristic solutions may not always be provable or completely accurate, they are often sufficient for solving small-scale problems within a larger context.
 
 ### Heuristics vs. Algorithms
 
@@ -40,6 +52,17 @@ Visit [DeepLearning.AI Short Courses](https://learn.deeplearning.ai/) for more g
 - [Introduction to Azure OpenAI and Architecture Patterns (Shep Video1)](https://www.youtube.com/watch?v=TI85JJVPnrM)
 - [Azure OpenAI Chat With Your Data No Code Edition (Shep Video2)](https://www.youtube.com/watch?v=tFJNasjGM3E)
 
+
+# SDK
+
+From courses listed above you may seee that there are many different SDKs that can be used to develop AI solutions.
+
+## Samples
+
+This repo contains samples for the following SDKs:
+
+- [Semantic Kernel (SK), C#, .NET 8](/examples/CSharp/)
+- [LangChain, Python](/examples/LangChain/)
 
 # RAG pattern
 
