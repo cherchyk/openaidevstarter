@@ -1,3 +1,4 @@
+Co-Pilots & App Development with Large Language Models starter package.
 
 # Contents
 
