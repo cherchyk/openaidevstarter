@@ -52,15 +52,13 @@ For more great courses on LLMs, visit [DeepLearning.AI Short Courses](https://le
 
 ### Shift from Algorithmic to Heuristic Software
 
-In software development , there has been a shift from algorithmic approaches to heuristic methods. Heuristic methods utilize available data to solve problems, rather than relying on predefined solutions. While heuristic solutions may not always be provable or completely accurate, they are often sufficient for solving small-scale problems within a larger context.
+Application development leveraging LLM offers a shift from algorithmic approaches to heuristic methods. Heuristic methods utilize available data to solve problems, rather than relying on predefined solutions. While heuristic solutions may not always be provable or completely accurate, they are often sufficient for solving small-scale problems within a larger context.
 
-### Heuristics vs. Algorithms
-
-Algorithms provide step-by-step instructions for solving a specific problem in a finite number of steps. The outcome of an algorithm is predictable and can be reliably reproduced with the same input. On the other hand, heuristic outcomes are educated guesses. They cannot be predicted or reproduced reliably.
+**Heuristics vs. Algorithms.**  Algorithms provide step-by-step instructions for solving a specific problem in a finite number of steps. The outcome of an algorithm is predictable and can be reliably reproduced with the same input. On the other hand, heuristic outcomes are educated guesses. They cannot be predicted or reproduced reliably.
 
 ## SDKs / Frameworks
 
-When developing AI solutions, you have the option to use API libraries or SDKs/Frameworks. While it is possible to use only API libraries, using SDKs/Frameworks can help you develop solutions faster and with less code. It is recommended to use SDKs/Frameworks whenever possible.
+When developing solutions that utilize Large Language Models (LLMs), you have the choice of using API libraries or SDKs/Frameworks. Although it is feasible to solely rely on API libraries, leveraging SDKs/Frameworks can expedite solution development and reduce code complexity. It is advisable to utilize SDKs/Frameworks whenever possible.
 
 > **Important Note:** Code-related educational material can quickly become obsolete due to the constant evolution of libraries and SDKs. It is recommended for learners to focus on application development patterns rather than specific syntax, as patterns are more resistant to change.
 
@@ -89,11 +87,12 @@ This repo contains samples for the following SDKs:
 - [LangChain, Python](/samples/LangChain/)
 
 
+### Recomendations regarding Performance, Stability and Cost
 
-### Performance, Stability, Cost
 - Latency is a significant challenge in call centers where AI-powered virtual agents assist human agents. To mitigate the wait time, call centers often utilize call-waiting messages. Interfaces that incorporate visual UI can enhance response time by leveraging Streaming. For more information, refer to the [OpenAI Streaming](https://platform.openai.com/docs/api-reference/streaming) and [Azure Open AI API reference](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference#:~:text=stream) documentation.
 - LangChain and LlamaIndex provide an optional caching (LlamaIndex also offers remote cache management). This feature offers two advantages: it can help reduce costs by minimizing the number of API calls to the LLM provider and improve responsiveness.
-
+- While building SaaS/Multitenant solution it's recomened to review [Multitenancy and Azure OpenAI Service](https://learn.microsoft.com/azure/architecture/guide/multitenant/service/openai) article.  It's provides guidance on how to implement multitenancy with Azure OpenAI Service.
+- Putting API Management in front of two or more Azure OpenAI services can increase the number of tokens per minute (TPM) and improve stability by implementing retry logic for failed requests. You can refer to the sample code for implementing [Azure OpenAI Service Load Balancing with Azure API Management](https://learn.microsoft.com/en-us/samples/azure-samples/azure-openai-apim-load-balancing/azure-openai-service-load-balancing-with-azure-api-management/).  More advanced implementaion based on NGINX and AKS can be found in the article - [Azure OpenAI Service Multitenant Load Balancing and Token Per Minute Tracking via Prometheus Metrics](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/azure-openai-service-multitenant-load-balancing-and-token-per/ba-p/3980163)
 
 
 ##  RAG pattern
