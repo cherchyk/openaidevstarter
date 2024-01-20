@@ -178,6 +178,8 @@ You can find more information about Copilot Studio at the following links:
 
 Vector databases are a new class of databases that are optimized for storing and querying vector data. They are designed to handle large volumes of vector data and provide fast, efficient, and scalable access to it. Vector databases are commonly used for RAG pattern and Semantic Caching.
 
+> **Semantic caching** in app development is a technique where data is stored in a cache based on the semantics, or meaning, of the queries rather than the exact query text or results. This allows for more efficient use of cache space and quicker response times, as the cache can serve results for queries that are similar in meaning, even if they are not identical in form.
+
 The following table offers an overview of common vector database across a range of characteristics. It helps in evaluating and comparing these databases based on various technical and operational aspects.
 
 // TODO: review table
