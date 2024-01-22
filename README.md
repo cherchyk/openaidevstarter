@@ -132,12 +132,12 @@ To ensure optimal retrieval and completion results, it is crucial to use the sam
 
 #### 4. Retrieval
 
-There are different strategies for retrieval. Some DBs provide configurable hybrid retrieval strategies. The retrieval practices are evolving, and we see that VectorDBs are taking ownership over this step as it makes sense to filter data as close to the data source as possible. They are adding more and more features to support different retrieval strategies.  Retrieval is an active space for research and development.
+There are different strategies for retrieval. Some DBs provide configurable hybrid retrieval strategies. The retrieval practices are evolving, and we see that VectorDBs are taking ownership over this step as it makes sense to filter data as close to the data source as possible. They are adding more and more features to support different retrieval strategies.  Retrieval is also an active space for research and development.
 
 
 Here are some resources for advanced retrieval tactics:
 
-- [Advanced Retrieval tactics using LlamaIndex](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4)
+- [Advanced Retrieval tactics using LlamaIndex](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4).  Article Discusses "Smaller Child Chunks Referring to Bigger Parent Chunks" and "Sentence Window Retrieval" taktics.
 - [Advanced Retrieval for AI with Chroma and OpenAI SDK](https://learn.deeplearning.ai/advanced-retrieval-for-ai).  This course covers the [Query Expansion](https://arxiv.org/abs/2305.03653) and Re-ranking strategies to improve retrieval results:
     - Advanced Retrieval strategy: Query Expansion by Prompting Large Language Models 
     
@@ -155,9 +155,10 @@ Here are some resources for advanced retrieval tactics:
 
 LangChain has also implemented a couple of strategies for retrieval.
 
+
 #### 5. Prompting
 
-Great list of strategies and tactics for prompting can be found here: https://platform.openai.com/docs/guides/prompt-engineering/strategy-provide-reference-text
+For a comprehensive list of strategies and tactics for prompting, you can refer to the [Prompt Engineering by OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) guide. Additionally, you can find a compilation of prompting techniques in one place at the [Prompt Engineering Guide](https://www.promptingguide.ai/).
 
 
 ## Orchestration / Agents
