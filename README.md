@@ -99,7 +99,7 @@ This repo contains samples for the following SDKs:
 ##  RAG pattern
 The RAG (Retrieval-Augmented Generation) pattern used with Large Language Models (LLMs) like GPT-3 is a machine learning approach that enhances the capabilities of generative models by combining them with retrieval-based models. This technique allows the LLM to access a broader range of information than what is contained in its training data, improving its performance in tasks that require specific, detailed, or up-to-date knowledge.
 
-[LangChain Chat With Your Data](https://learn.deeplearning.ai/langchain-chat-with-your-data) is a course that covers loading, chunking, and retrieval tactics used in RAG pattern leveraging LangChain.  The article [Advanced RAG: Small to Big Retrieval](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4) discusses Child-Parent Recursive Retriever and Sentence Window Retrieval with LlamaIndex. It also explores retrieval strategies such as Child to Parent and Window.  Semantic Kernel, combined with [Kernel Memory](https://github.com/microsoft/kernel-memory), can be utilized to implement the Retrieval-Augmented Generation (RAG) pattern.
+[LangChain Chat With Your Data](https://learn.deeplearning.ai/langchain-chat-with-your-data) is a course that covers loading, chunking, and retrieval tactics used in RAG pattern leveraging LangChain.  The article [Advanced RAG: Small to Big Retrieval](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4) discusses Child-Parent Recursive Retriever and Sentence Window Retrieval with LlamaIndex. It also explores retrieval strategies such as Child to Parent and Window.  Semantic Kernel, combined with [Kernel Memory][def], can be utilized to implement the Retrieval-Augmented Generation (RAG) pattern.
 
 ### RAG steps
 
@@ -107,34 +107,51 @@ The RAG (Retrieval-Augmented Generation) pattern used with Large Language Models
 
 #### 1. Loading
 
-LangChain has implemented loading from different sources and of different formats.  Semantic Kernel had this features  initially but later it was extracted to [Kernel Memory](https://github.com/microsoft/kernel-memory)
+Loading is the initial step in the RAG pattern, where data/text is obtained from various sources and formats before it is chunked and stored in a Vector DB.
+
+LangChain provides loading capabilities from different sources and formats. Initially, Semantic Kernel had this feature, but it was later extracted to [Kernel Memory](https://github.com/microsoft/kernel-memory).
 
 #### 2. Chunking / Splitting
-Automatic chunking is challenging when we have documents of different formats. We have customers who converted important PDFs to text and then manually chunked them. This way, they were able to get the best results during the retrieval step and later the completion.
+Automatic chunking is challenging when dealing with documents of different formats. Some customers have manually converted important PDFs to text and then chunked them to achieve better retrieval and completion results.
 
-> Chunking is a crucial step in the RAG pattern. It involves not only considering the size of the chunk but also the content. For instance, if we have a document with 100 pages and only 1 paragraph is relevant to the question, we should chunk it in a way that separates the relevant paragraph into its own chunk. This allows us to retrieve the specific chunk and use it to generate a prompt.
+> Chunking is a crucial step in the RAG pattern. It involves considering not only the size of the chunk but also its content. For example, if a document has 100 pages and only 1 paragraph is relevant to the question, it should be chunked in a way that separates the relevant paragraph into its own chunk. This allows for specific retrieval and prompt generation.
+
+The quality of retrieval heavily relies on the quality of chunking. There is ongoing experimentation to achieve optimal and intelligent chunking.
 
 #### 3. Embedding and Storage to Vector DB
 
+Embeding data and storing to vector DB is the next step in the RAG pattern.  Some Vector DBs automatically generate embeddings as you save data. For more information, refer to the [Weaviate Course](https://learn.deeplearning.ai/vector-databases-embeddings-applications).
 
-It's important to use the same model for creating embeddings of both chunks and questions. This helps in getting better results when retrieving information and completing tasks. If organizations keep adding new documents, they might face a problem if the original embedding model they use becomes outdated and unavailable. Using a new model could lead to bad search results because it creates different embeddings. To avoid this, consider these options:
+To ensure optimal retrieval and completion results, it is crucial to use the same model for creating embeddings of both chunks and questions. However, organizations may face challenges if the original embedding model becomes outdated or unavailable. To address this, consider the following options:
 
 - Choose an embedding model with a distant deprecation date.
-- Save the raw text of chunks along with their vectors. This enables you to regenerate embeddings using a newer model if needed, although it may increase costs.
-- Download the embedding model and host it on your own infrastructure. This allows continued use even after deprecation, but it also entails additional costs.
+- Save the raw text of chunks along with their vectors, allowing for regeneration of embeddings using a newer model if necessary (although this may increase costs).
+- Download the embedding model and host it on your own infrastructure, ensuring continued use even after deprecation (but incurring additional costs).
 
-Some Vector DBs will automatically get embedding as you save text.
-Weaviate Course - https://learn.deeplearning.ai/vector-databases-embeddings-applications  
+
 
 #### 4. Retrieval
 
-There are different strategies for retrieval. Some DBs provide configurable hybrid retrieval strategies. The retrieval practices are evolving, and we see that VectorDBs are taking ownership over this step as it makes sense to filter data as close to the data source as possible. They are adding more and more features to support different retrieval strategies.
+There are different strategies for retrieval. Some DBs provide configurable hybrid retrieval strategies. The retrieval practices are evolving, and we see that VectorDBs are taking ownership over this step as it makes sense to filter data as close to the data source as possible. They are adding more and more features to support different retrieval strategies.  Retrieval is an active space for research and development.
 
 
 Here are some resources for advanced retrieval tactics:
 
 - [Advanced Retrieval tactics using LlamaIndex](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4)
-- [Advanced Retrieval for AI with Chroma and LangChain](https://learn.deeplearning.ai/advanced-retrieval-for-ai)
+- [Advanced Retrieval for AI with Chroma and OpenAI SDK](https://learn.deeplearning.ai/advanced-retrieval-for-ai).  This course covers the [Query Expansion](https://arxiv.org/abs/2305.03653) and Re-ranking strategies to improve retrieval results:
+    - Advanced Retrieval strategy: Query Expansion by Prompting Large Language Models 
+    
+    [<img src="content/imgs/QueryExpansion.png" width="250">](content/imgs/QueryExpansion.png)
+
+    - Advanced Retrieval strategy: Query Expansion by Prompting Large Language Models 
+    
+    [<img src="content/imgs/QueryExpansionWithMultp.png" width="250">](content/imgs/QueryExpansionWithMultp.png)
+
+    - Re-Ranking 
+    
+    [<img src="content/imgs/ReRanking.png" width="250">](content/imgs/ReRanking.png)
+
+
 
 LangChain has also implemented a couple of strategies for retrieval.
 
@@ -204,3 +221,6 @@ The following table offers an overview of common vector database across a range 
 
 
 
+
+
+[def]: https://github.com/microsoft/kernel-memory
