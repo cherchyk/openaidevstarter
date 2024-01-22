@@ -80,6 +80,7 @@ When developing solutions that utilize Large Language Models (LLMs), you have th
 
 Python has traditionally had the largest community for AI research and development. However, the C# AI community is rapidly growing thanks to the advancements in Semantic Kernel. On the other hand, JavaScript, despite being a popular language, currently lacks a mature representation in the LLM domain.
 
+For a comprehensive resource on Semantic Kernel, check out the [Dive into the World of AI with the Semantic Kernel Cookbook](https://techcommunity.microsoft.com/t5/educator-developer-blog/dive-into-the-world-of-ai-with-the-semantic-kernel-cookbook/ba-p/4032668?WT.mc_id=academic-0000-abartolo).
 
 ### Code Samples
 This repo contains samples for the following SDKs:
