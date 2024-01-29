@@ -4,7 +4,10 @@ Co-Pilots & App Development with Large Language Models starter package.
 
 1. [Introduction](#introduction)
 1. [Suggested Learning](#suggested-learning)
-1. [Development Scenarios](#development-scenarios)
+1. [Common Patterns](#common-patterns)
+    - [1 Conversational Bot](#1-conversational-bot)
+    - [2 Process Automation](#2-process-automation)
+    - [3 Decisigion Tree or Flow Orchestraction](#3-decisigion-tree-or-flow-orchestraction)
 1. [Development](#development)
     - [SDKs / Frameworks](#sdks--frameworks)
     - [RAG pattern](#rag-pattern)
@@ -50,15 +53,17 @@ For more great courses on LLMs, visit [DeepLearning.AI Short Courses](https://le
     - [Introduction to Azure OpenAI and Architecture Patterns](https://www.youtube.com/watch?v=TI85JJVPnrM)
     - [Azure OpenAI Chat With Your Data No Code Edition](https://www.youtube.com/watch?v=tFJNasjGM3E)
 
-# Using Patterns
+# Common Patterns
 
-Here are common using patterns that ISVs are using with LLMs:
+Here are common patterns that ISVs and Startups are using with LLMs:
 
 ## 1 Conversational Bot
 
-Conversational bots often utilize Large Language Models (LLMs) to interact with end users. These bots receive user queries and generate responses using LLMs. However, LLMs are not domain-specific by default. To make LLMs domain-specific, developers employ the RAG pattern, which combines LLMs with [Vector Databases](#vector-dbs). Vector DBs store domain-specific data, enabling the RAG pattern to provide more accurate and relevant responses. For more information on the RAG pattern, refer to the [RAG pattern section](#rag-pattern).  RAG pattern can also be implemented with no-code/low-code approach using [Microsoft Copilot Studio](#microsoft-copilot-studio---no-code--low-code-development).
+Conversational bots often utilize Large Language Models (LLMs) to interact with end users. These bots receive user queries and generate responses using LLMs. However, LLMs are not domain-specific by default. To make LLMs domain-specific, developers employ the [RAG pattern](#rag-pattern).  Addutionally to RAG pattern developerd will also need to develop bot.  Bot could be developed usign [Bot Framework SDK](https://learn.microsoft.com/azure/bot-service/bot-service-overview?view=azure-bot-service-4.0).
 
-## 2 Process Intelligence
+As an alternative, developers can deliver conversational bot with no-code/low-code approach using [Microsoft Copilot Studio](#microsoft-copilot-studio---no-code--low-code-development).
+
+## 2 Process Automation
 
 We see that LLM is used in scenarios where human agents traditionally perform tasks. For example, in recruitment agencies, LLMs can analyze job descriptions and resumes to match candidates with suitable positions. This process involves two steps: first, extracting key characteristics from job postings, and second, using LLMs to scan resumes and identify the best fit for a role based on those key characteristics.
 
@@ -69,7 +74,7 @@ Refer to [SDKs / Frameworks](#sdks--frameworks) and [Orchestration / Agents](#or
 
 ## 3 Decisigion Tree or Flow Orchestraction
 
-In call center solutions, Large Language Models (LLMs) can be utilized to determine the intent of customer queries. This intent can then be used to route the call to the appropriate agent or flow. LLMs can also generate responses to customers. If a customer wants to execute an action, the LLM can collect the necessary details and call a corresponding function.  Similarly as in Process Intelligence scenario, this can be implemented with [SDKs / Frameworks](#sdks--frameworks) and [Orchestration / Agents](#orchestration--agents).
+In call center solutions, Large Language Models (LLMs) can be utilized to determine the intent of customer queries. This intent can then be used to route the call to the appropriate agent or flow. LLMs can also generate responses to customers. If a customer wants to execute an action, the LLM can collect the necessary details and call a corresponding function.  Similarly as in Process Automation scenario, this can be implemented with [SDKs / Frameworks](#sdks--frameworks) and [Orchestration / Agents](#orchestration--agents).
 
 # Development
 
@@ -161,21 +166,15 @@ Here are some resources for advanced retrieval tactics:
 
 - [Advanced Retrieval tactics using LlamaIndex](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4).  Article Discusses "Smaller Child Chunks Referring to Bigger Parent Chunks" and "Sentence Window Retrieval" taktics.
 - [Advanced Retrieval for AI with Chroma and OpenAI SDK](https://learn.deeplearning.ai/advanced-retrieval-for-ai).  This course covers the [Query Expansion](https://arxiv.org/abs/2305.03653) and Re-ranking strategies to improve retrieval results:
-    - Advanced Retrieval strategy: Query Expansion by Prompting Large Language Models 
-    
+    - Advanced Retrieval strategy: Query Expansion by Prompting Large Language Models     
     [<img src="content/imgs/QueryExpansion.png" width="250">](content/imgs/QueryExpansion.png)
 
-    - Advanced Retrieval strategy: Query Expansion by Prompting Large Language Models 
-    
+    - Advanced Retrieval strategy: Query Expansion by Prompting Large Language Models     
     [<img src="content/imgs/QueryExpansionWithMultp.png" width="250">](content/imgs/QueryExpansionWithMultp.png)
 
-    - Re-Ranking 
-    
+    - Re-Ranking     
     [<img src="content/imgs/ReRanking.png" width="250">](content/imgs/ReRanking.png)
-
-
-
-LangChain has also implemented a couple of strategies for retrieval.
+- LangChain has also implemented multiple [retrieval strategies](https://python.langchain.com/docs/modules/data_connection/retrievers/).
 
 
 #### 5. Prompting
