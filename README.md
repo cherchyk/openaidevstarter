@@ -3,17 +3,18 @@ Co-Pilots & App Development with Large Language Models starter package.
 # Contents
 
 1. [Introduction](#introduction)
-2. [Suggested Learning](#suggested-learning)
-3. [Development](#development)
+1. [Suggested Learning](#suggested-learning)
+1. [Development Scenarios](#development-scenarios)
+1. [Development](#development)
     - [SDKs / Frameworks](#sdks--frameworks)
     - [RAG pattern](#rag-pattern)
     - [Orchestration / Agents](#orchestration--agents)
-4. [Microsoft Copilot Studio - No Code / Low Code Development](#microsoft-copilot-studio---no-code--low-code-development)
-5. [Vector DBs](#vector-dbs)
+1. [Microsoft Copilot Studio - No Code / Low Code Development](#microsoft-copilot-studio---no-code--low-code-development)
+1. [Vector DBs](#vector-dbs)
 
 # Introduction
 
-This repository aims to document the journey of learning how to use Large Language Models (LLMs) in app development. It will cover topics such as the RAG pattern, Vector DBs, Semantic Kernel, LangChain, and Microsoft Copilot Studio.
+This repository serves as a documentation of the learning journey in utilizing Large Language Models (LLMs) for app development. It covers various topics including the RAG pattern, Vector DBs, Semantic Kernel, LangChain, and Microsoft Copilot Studio. Additionally, it explores common usage patterns observed among ISVs and startups. The content is aimed at app developers and app architects.
 
 # Suggested Learning Resources
 
@@ -49,12 +50,31 @@ For more great courses on LLMs, visit [DeepLearning.AI Short Courses](https://le
     - [Introduction to Azure OpenAI and Architecture Patterns](https://www.youtube.com/watch?v=TI85JJVPnrM)
     - [Azure OpenAI Chat With Your Data No Code Edition](https://www.youtube.com/watch?v=tFJNasjGM3E)
 
+# Using Patterns
+
+Here are common using patterns that ISVs are using with LLMs:
+
+## 1 Conversational Bot
+
+Conversational bots often utilize Large Language Models (LLMs) to interact with end users. These bots receive user queries and generate responses using LLMs. However, LLMs are not domain-specific by default. To make LLMs domain-specific, developers employ the RAG pattern, which combines LLMs with [Vector Databases](#vector-dbs). Vector DBs store domain-specific data, enabling the RAG pattern to provide more accurate and relevant responses. For more information on the RAG pattern, refer to the [RAG pattern section](#rag-pattern).  RAG pattern can also be implemented with no-code/low-code approach using [Microsoft Copilot Studio](#microsoft-copilot-studio---no-code--low-code-development).
+
+## 2 Process Intelligence
+
+We see that LLM is used in scenarios where human agents traditionally perform tasks. For example, in recruitment agencies, LLMs can analyze job descriptions and resumes to match candidates with suitable positions. This process involves two steps: first, extracting key characteristics from job postings, and second, using LLMs to scan resumes and identify the best fit for a role based on those key characteristics.
+
+The same approach can be applied to other scenarios, such as checking if documents meet specific requirements or policies.
+
+Refer to [SDKs / Frameworks](#sdks--frameworks) and [Orchestration / Agents](#orchestration--agents) later in this document.
+
+
+## 3 Decisigion Tree or Flow Orchestraction
+
+In call center solutions, Large Language Models (LLMs) can be utilized to determine the intent of customer queries. This intent can then be used to route the call to the appropriate agent or flow. LLMs can also generate responses to customers. If a customer wants to execute an action, the LLM can collect the necessary details and call a corresponding function.  Similarly as in Process Intelligence scenario, this can be implemented with [SDKs / Frameworks](#sdks--frameworks) and [Orchestration / Agents](#orchestration--agents).
+
 # Development
 
-### Shift from Algorithmic to Heuristic Software
-
-Application development leveraging LLM offers a shift from algorithmic approaches to heuristic methods. Heuristic methods utilize available data to solve problems, rather than relying on predefined solutions. While heuristic solutions may not always be provable or completely accurate, they are often sufficient for solving small-scale problems within a larger context.
-
+> ### Shift from Algorithmic to Heuristic Software
+> Application development leveraging LLM offers a shift from algorithmic approaches to heuristic methods. Heuristic methods utilize available data to solve problems, rather than relying on predefined solutions. While heuristic solutions may not always be provable or completely accurate, they are often sufficient for solving small-scale problems within a larger context.
 > **Heuristics vs. Algorithms.**  Algorithms provide step-by-step instructions for solving a specific problem in a finite number of steps. The outcome of an algorithm is predictable and can be reliably reproduced with the same input. On the other hand, heuristic outcomes are educated guesses. They cannot be predicted or reproduced reliably.
 
 ## SDKs / Frameworks
