@@ -3,11 +3,16 @@ Co-Pilots & App Development with Large Language Models starter package.
 # Contents
 
 1. [Introduction](#introduction)
-1. [Suggested Learning](#suggested-learning)
 1. [Common Patterns](#common-patterns)
-    - [1 Conversational Bot](#1-conversational-bot)
-    - [2 Process Automation](#2-process-automation)
-    - [3 Decisigion Tree or Flow Orchestraction](#3-decisigion-tree-or-flow-orchestraction)
+    - [Conversational Bot](#conversational-bot)
+    - [Process Automation](#process-automation)
+    - [Decision Tree or Flow Orchestration](#decisigion-tree-or-flow-orchestraction)
+1. [Suggested Learning](#suggested-learning-resources)
+    - [LLM](#llm)
+    - [App Development](#app-development)
+    - [Quality](#quality)
+    - [Introductory courses to Vector DBs](#introductory-courses-to-vector-dbs)
+    - [Additional resources](#additional-resources)
 1. [Development](#development)
     - [SDKs / Frameworks](#sdks--frameworks)
     - [RAG pattern](#rag-pattern)
@@ -19,25 +24,77 @@ Co-Pilots & App Development with Large Language Models starter package.
 
 This repository serves as a documentation of the learning journey in utilizing Large Language Models (LLMs) for app development. It covers various topics including the RAG pattern, Vector DBs, Semantic Kernel, LangChain, and Microsoft Copilot Studio. Additionally, it explores common usage patterns observed among ISVs and startups. The content is aimed at app developers and app architects.
 
+
+# Common Patterns
+
+The terms Copilot, Bot, or Virtual Assistant are often used interchangeably to refer to assistance that relies on Large Language Models (LLMs). This assistance can have a user interface (UI) or voice interface, or it could be invisible as part of background processes.
+
+Here are common patterns that ISVs and Startups are using with LLMs:
+
+## Conversational Bot
+
+Conversational bots often utilize LLMs to interact with end users. These bots receive user queries and generate responses using LLMs. However, LLMs are not domain-specific by default. To make LLMs domain-specific, developers employ the [RAG pattern](#rag-pattern).  Addutionally to RAG pattern developerd will also need to develop bot.  Bot could be developed usign [Bot Framework SDK](https://learn.microsoft.com/azure/bot-service/bot-service-overview?view=azure-bot-service-4.0).
+
+As an alternative, developers can deliver conversational bot with no-code/low-code approach using [Microsoft Copilot Studio](#microsoft-copilot-studio---no-code--low-code-development).
+
+## Process Automation
+
+LLMs are being utilized in tasks traditionally performed by humans. For instance, in recruitment agencies, recruiters analyze job descriptions and resumes to match candidates with suitable roles. Automating this process has been challenging for app developers, but with the help of LLMs, it becomes much easier. Here's a possible solution: 
+1. Extract key characteristics from job descriptions using LLMs.
+2. Use LLMs to scan resumes and identify the best fit for a role based on those key characteristics.
+
+The same approach can be applied to other processes, such as checking if documents meet specific requirements or policies.
+
+For more information on how to implement these scenarios, please refer to the [SDKs / Frameworks](#sdks--frameworks) section and the [Orchestration / Agents](#orchestration--agents) section later in this document.
+
+## Decisigion Tree or Flow Orchestraction
+
+In call center solutions, Large Language Models (LLMs) can be utilized to determine the intent of customer queries. This intent can then be used to route the call to the appropriate agent or flow. LLMs can also generate responses to customers. If a customer wants to execute an action, the LLM can collect the necessary details and call a corresponding function.  Similarly as in Process Automation scenario, this can be implemented with [SDKs / Frameworks](#sdks--frameworks) and [Orchestration / Agents](#orchestration--agents).
+
+For more detailed information on Call Center, Support, and Process Automation, you can refer to the [CoE.ContentPack.CallCenter](https://github.com/RobertEichenseer/CoE.ContentPack.CallCenter) repository.
+
 # Suggested Learning Resources
 
-This section contains a list of recommended learning resources. It is recommended to follow the order of the courses listed below.
+To effectively integrate Large Language Models (LLMs) into app development, it's crucial to have a solid understanding of LLMs. Therefore, this section presents a list of learning resources. For optimal learning, it is advised to pursue the courses in the sequence provided below.
+
 
 ## LLM
-- [Generative AI with Large Language Models (20+h)](https://www.coursera.org/learn/generative-ai-with-llms) - an amazing introductory course that provides a strong understanding of LLMs. Alternatively, you can watch the shorter [Intro to Large Language Models (1h)](https://www.youtube.com/watch?v=zjkBMFhNj_g).
+
+- For an amazing introductory course on LLMs, check out the DeepLearning.AI course [Generative AI with Large Language Models (20+h)](https://www.coursera.org/learn/generative-ai-with-llms). This course provides a strong foundation in understanding LLMs, including the Attention Is All You Need algorithm, language model workings, embedding, and the challenges with Large Language Models. It also covers finetuning strategies and how smaller fine-tuned models can achieve comparable or even better results than large models.
+    
+    ![Attention Is All You Need algorithm](content/imgs/attention.png)
+    *Attention Is All You Need algorithm*
+
+    Course also dives into Generative AI project lifecycle.
+    
+    ![Generative AI project lifecycle](content/imgs/lifecycle.png)
+    *Generative AI project lifecycle*
+
+- If you prefer a shorter introduction, you can watch the [Intro to Large Language Models (1h)](https://www.youtube.com/watch?v=zjkBMFhNj_g) video.
 
 ## App Development
 
 > DeepLearning.AI is often recomened in this section. DeepLearning.AI is led by a team of instructors from Stanford University and deeplearning.ai, offers a comprehensive platform for learning AI development. They provide a wide range of courses, specializations, and professional certificates.
 
-- [ChatGPT Prompt Engineering for Developers (2h)](https://learn.deeplearning.ai/chatgpt-prompt-eng) and the [Prompt Engineering](https://platform.openai.com/docs/guides/prompt-engineering) article from OpenAI are recommended resources for learning prompting techniques.
-- [LangChain for LLM Application Development (2h)](https://learn.deeplearning.ai/langchain/) provides insights into using LangChain for LLM development.
-- [LangChain Chat with Your Data (2h)](https://learn.deeplearning.ai/langchain-chat-with-your-data/) is a course that demonstrates the use of LangChain for the RAG pattern.
-- [How Business Thinkers Can Start Building AI Plugins With Semantic Kernel](https://learn.deeplearning.ai/microsoft-semantic-kernel/) introduces Semantic Kernel (SK) and provides guidance on building AI plugins with it.
+- Prompt engineering refers to the practice of crafting and optimizing input prompts by selecting appropriate words, phrases, sentences, punctuation, and separator characters to effectively use LLMs for a wide variety of applications. In other words, prompt engineering is the art of communicating with an LLM.  Refer to these resources to learn more about prompt engineering:
+    - [ChatGPT Prompt Engineering for Developers (2h)](https://learn.deeplearning.ai/chatgpt-prompt-eng)
+    - [Prompt Engineering](https://platform.openai.com/docs/guides/prompt-engineering) article from OpenAI are recommended resources for learning prompting techniques.
+- There are two main approaches to send prompts to LLM:
+    - Leveraging API libraries
+    - Using SDKs/Frameworks that utilize API libraries
+    
+    We will review API libs and SDKs/Frameworks later in this document but for now complete some of the following courses to get a better understanding how to send prompts to LLMs:
+
+    - [LangChain for LLM Application Development (2h)](https://learn.deeplearning.ai/langchain/) provides insights into using LangChain for LLM development.
+    - [LangChain Chat with Your Data (2h)](https://learn.deeplearning.ai/langchain-chat-with-your-data/) is a course that demonstrates the use of LangChain for the RAG pattern.
+    - [How Business Thinkers Can Start Building AI Plugins With Semantic Kernel (2h)](https://learn.deeplearning.ai/microsoft-semantic-kernel/) introduces Semantic Kernel (SK) and provides guidance on building AI plugins with it.
 
 ### Quality.
-- [Evaluating and Debugging Generative AI](https://learn.deeplearning.ai/evaluating-debugging-generative-ai) is a course that explains how to use LLM to validate responses.
-- [Quality and Safety for LLM Applications](https://learn.deeplearning.ai/quality-safety-llm-applications/) another great quality and safety of outputs. 
+
+Verifying the quality of responses generated by LLMs in applications is an emerging area in software development. The courses listed below offer valuable insights into this process:
+
+- [Evaluating and Debugging Generative AI (2h)](https://learn.deeplearning.ai/evaluating-debugging-generative-ai) is a course that explains how to use LLM to validate responses.
+- [Quality and Safety for LLM Applications (2h)](https://learn.deeplearning.ai/quality-safety-llm-applications/) another great quality and safety of outputs. 
 
 ### Introductory courses to Vector DBs.
 - [Advanced Retrieval for AI with Chroma (2h)](https://learn.deeplearning.ai/advanced-retrieval-for-ai/)
@@ -53,30 +110,11 @@ For more great courses on LLMs, visit [DeepLearning.AI Short Courses](https://le
     - [Introduction to Azure OpenAI and Architecture Patterns](https://www.youtube.com/watch?v=TI85JJVPnrM)
     - [Azure OpenAI Chat With Your Data No Code Edition](https://www.youtube.com/watch?v=tFJNasjGM3E)
 
-# Common Patterns
-
-Here are common patterns that ISVs and Startups are using with LLMs:
-
-## 1 Conversational Bot
-
-Conversational bots often utilize Large Language Models (LLMs) to interact with end users. These bots receive user queries and generate responses using LLMs. However, LLMs are not domain-specific by default. To make LLMs domain-specific, developers employ the [RAG pattern](#rag-pattern).  Addutionally to RAG pattern developerd will also need to develop bot.  Bot could be developed usign [Bot Framework SDK](https://learn.microsoft.com/azure/bot-service/bot-service-overview?view=azure-bot-service-4.0).
-
-As an alternative, developers can deliver conversational bot with no-code/low-code approach using [Microsoft Copilot Studio](#microsoft-copilot-studio---no-code--low-code-development).
-
-## 2 Process Automation
-
-We see that LLM is used in scenarios where human agents traditionally perform tasks. For example, in recruitment agencies, LLMs can analyze job descriptions and resumes to match candidates with suitable positions. This process involves two steps: first, extracting key characteristics from job postings, and second, using LLMs to scan resumes and identify the best fit for a role based on those key characteristics.
-
-The same approach can be applied to other scenarios, such as checking if documents meet specific requirements or policies.
-
-Refer to [SDKs / Frameworks](#sdks--frameworks) and [Orchestration / Agents](#orchestration--agents) later in this document.
-
-
-## 3 Decisigion Tree or Flow Orchestraction
-
-In call center solutions, Large Language Models (LLMs) can be utilized to determine the intent of customer queries. This intent can then be used to route the call to the appropriate agent or flow. LLMs can also generate responses to customers. If a customer wants to execute an action, the LLM can collect the necessary details and call a corresponding function.  Similarly as in Process Automation scenario, this can be implemented with [SDKs / Frameworks](#sdks--frameworks) and [Orchestration / Agents](#orchestration--agents).
 
 # Development
+
+
+After completing the recommended courses from the previous section, you will have a solid understanding of application development with LLMs.  In this section want to add more clarity on how to develop applications with LLMs.
 
 > ### Shift from Algorithmic to Heuristic Software
 > Application development leveraging LLM offers a shift from algorithmic approaches to heuristic methods. Heuristic methods utilize available data to solve problems, rather than relying on predefined solutions. While heuristic solutions may not always be provable or completely accurate, they are often sufficient for solving small-scale problems within a larger context.
@@ -84,9 +122,13 @@ In call center solutions, Large Language Models (LLMs) can be utilized to determ
 
 ## SDKs / Frameworks
 
-When developing solutions that utilize Large Language Models (LLMs), you have the choice of using API libraries or SDKs/Frameworks. Although it is feasible to solely rely on API libraries, leveraging SDKs/Frameworks can expedite solution development and reduce code complexity. It is advisable to utilize SDKs/Frameworks whenever possible.
 
-> **Important Note:** Code-related educational material can quickly become obsolete due to the constant evolution of libraries and SDKs. It is recommended for learners to focus on application development patterns rather than specific syntax, as patterns are more resistant to change.
+When developing solutions that utilize Large Language Models (LLMs), you have the choice of using API Libraries or SDKs/Frameworks. API Libraries are used to build requests, execute and parse requests to LLM endpoints. On the other hand, SDKs/Frameworks provide additional convenient features for developers while internally using API libraries.
+
+While it is feasible to solely rely on API libraries, leveraging SDKs/Frameworks can expedite solution development and reduce code complexity. Therefore, it is recommended to utilize SDKs/Frameworks whenever possible.
+
+> **Important Note:** Code-related educational material can quickly become obsolete due to the constant evolution of libraries and SDKs. It is recommended for learners to focus on application development patterns rather than specific syntax, as patterns are more resistant to change. Refer to official tutorials and documentation for the most up-to-date information.
+
 
 |                     | [OpenAI](https://platform.openai.com/docs/libraries/python-library)  | [Azure Open AI](https://learn.microsoft.com/en-us/azure/ai-services/openai/supported-languages) | [Semantic Kernel](https://learn.microsoft.com/en-us/semantic-kernel/overview/) | [LangChain](https://www.langchain.com/)       | [LlamaIndex](https://www.llamaindex.ai/)      |
 | ------------------- | ----------- | ----------------- | --------------- | --------------- | --------------- |
@@ -96,16 +138,17 @@ When developing solutions that utilize Large Language Models (LLMs), you have th
 |                     |             |                   |                 |                 |                 |
 | Framework Features (Memory, Orchestration, Agents...) |  -        |  -                | yes             | yes             | yes             |
 |                     |             |                   |                 |                 |                 |
-| C#                  | yes         | yes               | yes             |  -              |  -              |
-| Python              | yes         | yes               | yes             | yes             | yes             |
-| JS                  | yes         | yes               |  -              | yes             | yes             |
+| - C#                  | yes         | yes               | yes             |  -              |  -              |
+| - Python              | yes         | yes               | yes             | yes             | yes             |
+| - JS                  | yes         | yes               |  -              | yes             | yes             |
 
+The table above shows only three languages, but API Libraries are available for many more languages.  It is also important to note that updates in models are first reflected in API Libraries and later SDKs/Frameworks.
 
-> The table above shows only three languages, but API libraries are available for many more languages. It is also important to note that updates in models are first reflected in API libraries and later frameworks.
+Traditionally Python has the biggest list of AI related libraries due to the largest AI research and development community. However, the C# AI community is rapidly growing thanks to the Semantic Kernel and C# API Libarires. On the other hand, JavaScript, despite being a popular language, currently lacks a string community around LLM.
 
-Traditionally Python has biggest list of AI related libraries due to the largest AI research and development community. However, the C# AI community is rapidly growing thanks to the advancements in Semantic Kernel. On the other hand, JavaScript, despite being a popular language, currently lacks a mature representation in the AI domain.
+When working with customers, we have observed that the most important factor in choosing an SDK/Framework is the team's expertise as most Libraries and SDKs are very similar in terms of functionality and performance.
 
-For a comprehensive resource on Semantic Kernel, check out the [Dive into the World of AI with the Semantic Kernel Cookbook](https://techcommunity.microsoft.com/t5/educator-developer-blog/dive-into-the-world-of-ai-with-the-semantic-kernel-cookbook/ba-p/4032668?WT.mc_id=academic-0000-abartolo).
+If your team plans using c# then check out the comprehensive resource on Semantic Kernel - [Dive into the World of AI with the Semantic Kernel Cookbook](https://techcommunity.microsoft.com/t5/educator-developer-blog/dive-into-the-world-of-ai-with-the-semantic-kernel-cookbook/ba-p/4032668?WT.mc_id=academic-0000-abartolo).
 
 ### Code Samples
 This repo contains samples for the following SDKs:
@@ -147,7 +190,7 @@ The quality of retrieval heavily relies on the quality of chunking. There is ong
 
 #### 3. Embedding and Storage to Vector DB
 
-Embeding data and storing to vector DB is the next step in the RAG pattern.  Some Vector DBs automatically generate embeddings as you save data. For more information, refer to the [Weaviate Course](https://learn.deeplearning.ai/vector-databases-embeddings-applications).
+Embeding data and storing to vector DB is the next step in the RAG pattern.  Some Vector DBs automatically generate embeddings as you save data. For more information, refer to the [Weaviate DB Course](https://learn.deeplearning.ai/vector-databases-embeddings-applications).
 
 To ensure optimal retrieval and completion results, it is crucial to use the same model for creating embeddings of both chunks and questions. However, organizations may face challenges if the original embedding model becomes outdated or unavailable. To address this, consider the following options:
 
@@ -184,7 +227,7 @@ For a comprehensive list of strategies and tactics for prompting, you can refer 
 
 ## Orchestration / Agents
 
-it is a ToDo section
+ -------- it is a ToDo section
 
 
 
