@@ -171,26 +171,28 @@ The RAG (Retrieval-Augmented Generation) pattern used with Large Language Models
 
 [LangChain Chat With Your Data](https://learn.deeplearning.ai/langchain-chat-with-your-data) is a course that covers loading, chunking, and retrieval tactics used in RAG pattern leveraging LangChain.  The article [Advanced RAG: Small to Big Retrieval](https://towardsdatascience.com/advanced-rag-01-small-to-big-retrieval-172181b396d4) discusses Child-Parent Recursive Retriever and Sentence Window Retrieval with LlamaIndex. It also explores retrieval strategies such as Child to Parent and Window.  Semantic Kernel, combined with [Kernel Memory][def], can be utilized to implement the Retrieval-Augmented Generation (RAG) pattern.
 
-### RAG steps
+When implementing the RAG pattern, it is important to use tools that you are familiar with for troubleshooting and debugging. Latency issues may arise at different stages of the pattern, requiring you to check logs for the Vector DB, LLM provider, and the SDK/Framework being used. Monitoring the performance of the RAG pattern is also crucial. This includes tracking the number of requests to each component (LLM provider, Vector DB, and SDK/Framework), as well as monitoring latency and cost.
+
+### RAG stages
 
 ![rag](content/imgs/rag.png)
 
 #### 1. Loading
 
-Loading is the initial step in the RAG pattern, where data/text is obtained from various sources and formats before it is chunked and stored in a Vector DB.
+Loading is the initial stage in the RAG pattern, where data/text is obtained from various sources and formats before it is chunked and stored in a Vector DB.
 
 LangChain provides loading capabilities from different sources and formats. Initially, Semantic Kernel had this feature, but it was later extracted to [Kernel Memory](https://github.com/microsoft/kernel-memory).
 
 #### 2. Chunking / Splitting
 Automatic chunking is challenging when dealing with documents of different formats. Some customers have manually converted important PDFs to text and then chunked them to achieve better retrieval and completion results.
 
-> Chunking is a crucial step in the RAG pattern. It involves considering not only the size of the chunk but also its content. For example, if a document has 100 pages and only 1 paragraph is relevant to the question, it should be chunked in a way that separates the relevant paragraph into its own chunk. This allows for specific retrieval and prompt generation.
+> Chunking is a crucial stage in the RAG pattern. It involves considering not only the size of the chunk but also its content. For example, if a document has 100 pages and only 1 paragraph is relevant to the question, it should be chunked in a way that separates the relevant paragraph into its own chunk. This allows for specific retrieval and prompt generation.
 
 The quality of retrieval heavily relies on the quality of chunking. There is ongoing experimentation to achieve optimal and intelligent chunking.
 
 #### 3. Embedding and Storage to Vector DB
 
-Embeding data and storing to vector DB is the next step in the RAG pattern.  Some Vector DBs automatically generate embeddings as you save data. For more information, refer to the [Weaviate DB Course](https://learn.deeplearning.ai/vector-databases-embeddings-applications).
+Embeding data and storing to vector DB is the next stage in the RAG pattern.  Some Vector DBs automatically generate embeddings as you save data. For more information, refer to the [Weaviate DB Course](https://learn.deeplearning.ai/vector-databases-embeddings-applications).
 
 To ensure optimal retrieval and completion results, it is crucial to use the same model for creating embeddings of both chunks and questions. However, organizations may face challenges if the original embedding model becomes outdated or unavailable. To address this, consider the following options:
 
@@ -202,7 +204,7 @@ To ensure optimal retrieval and completion results, it is crucial to use the sam
 
 #### 4. Retrieval
 
-There are different strategies for retrieval. Some DBs provide configurable hybrid retrieval strategies. The retrieval practices are evolving, and we see that VectorDBs are taking ownership over this step as it makes sense to filter data as close to the data source as possible. They are adding more and more features to support different retrieval strategies.  Retrieval is also an active space for research and development.
+There are different strategies for retrieval. Some DBs provide configurable hybrid retrieval strategies. The retrieval practices are evolving, and we see that VectorDBs are taking ownership over this stage as it makes sense to filter data as close to the data source as possible. They are adding more and more features to support different retrieval strategies.  Retrieval is also an active space for research and development.
 
 
 Here are some resources for advanced retrieval tactics:
@@ -249,12 +251,9 @@ While Copilot Studio offers significant value, it does require some learning cur
 
 - [The Microsoft Copilot Studio Architecture Series](https://aka.ms/pvaarchitectureseries) is a valuable resource for chatbot projects. It covers various considerations and topics, including:
 
-    - Planning your first chatbot, 
-    - Building your first chatbot
-    - Extending your PVA chatbot with the Power Platform
-    - Extending your PVA chatbot with the Bot Framework
-    - Advanced topics
-    - Security and Governance.
+    - Planning and Building your first chatbot
+    - Extending your PVA chatbot with the Power Platform or Bot Framework
+    - Advanced topics, Security and Governance.
 
 - [Create copilots with Microsoft Copilot Studio](https://learn.microsoft.com/en-gb/training/paths/power-virtual-agents-workshop/) In this learning path you'll complete hands on activities using Microsoft Power Platform, specifically Microsoft Copilot Studio and Power Automate.
 - To learn about Application Lifecycle Management, please refer to the official documentation on [ALM for Developers](https://learn.microsoft.com/power-platform/alm/alm-for-developers). ALM is a critical aspect that poses challenges not only for ISVs but also for managing the lifecycle within an Azure Enterprise Tenant.
