@@ -16,7 +16,8 @@ Co-Pilots & App Development with Large Language Models starter package.
 1. [Development](#development)
     - [SDKs / Frameworks](#sdks--frameworks)
     - [RAG pattern](#rag-pattern)
-    - [Orchestration / Agents](#orchestration--agents)
+    - [Plugins, Tools and Functions](#plugins--tools-and-functions)
+    - [Assistants, Agents, and Planners](#assistants--agents-and-planners)
 1. [Vector DB](#vector-db)
 1. [Microsoft Copilot Studio - No Code / Low Code Development](#microsoft-copilot-studio---no-code--low-code-development)
 
@@ -250,9 +251,56 @@ The choice of the search types – **Text, Vector search** or **Hybrid Search** 
 For a comprehensive list of strategies and tactics for prompting, you can refer to the [Prompt Engineering by OpenAI](https://platform.openai.com/docs/guides/prompt-engineering) guide. Additionally, you can find a compilation of prompting techniques in one place at the [Prompt Engineering Guide](https://www.promptingguide.ai/).
 
 
-## Orchestration / Agents
+## Plugins, Tools and Functions
 
- -------- it is a ToDo section
+LLMs are time capsules that do not have access to data or services. One way to provide context to LLMs is by using plugins. They can be used to provide context to LLMs, such as current weather forecasts or available products in a store. Plugins serve as a means to ground context for LLMs.
+
+
+Frameworks use different terminology for plugins. For example, in Semantic Kernel, they are called "Plugins". In LangChain, they are called "Tools". In OpenAI, they are called "Functions". Additionally, the way plugins are created may vary between frameworks.  For example, in Semantic Kernel, plugins are created as a class with a method that is decorated with a KernelFunction attribute.  Here is an example of a plugin in Semantic Kernel:
+
+```
+public class EmailPlugin
+{
+    [KernelFunction]
+    [Description("Sends an email to a recipient.")]
+    public async Task SendEmailAsync(
+        Kernel kernel,
+        [Description("Semicolon delimitated list of emails of the recipients")] string recipientEmails,
+        string subject,
+        string body
+    )
+    {
+        // Add logic to send an email using the recipientEmails, subject, and body
+        // For now, we'll just print out a success message to the console
+        Console.WriteLine("Email sent!");
+    }
+}
+```
+
+Refer to the official documentation for more information:
+- [OpenAI Function calling](https://platform.openai.com/docs/guides/function-calling) or [OpenAI Assistants Tools (Beta) ](https://platform.openai.com/docs/assistants/tools)
+- [Understanding AI plugins in Semantic Kernel](https://learn.microsoft.com/semantic-kernel/agents/plugins/)
+- [LangChain tools](https://python.langchain.com/docs/modules/agents/tools/)
+
+## Assistants, Agents, and Planners
+
+
+
+Assistants, Agents, and Planners are an active area of research and development. The introduction of OpenAI Assistants has brought significant similarities to Semantic Kernel Agents, performing 80-90% of their tasks and offering state via files and threads. This new feature has impacted the focus of Semantic Kernel. For more information, you can watch the video on the Future of agents and plugins in Semantic Kernel. While many features of the Semantic Kernel are now available in OpenAI Assistants, the Semantic Kernel still provides unique capabilities, such as the ability to create plugins, use Kernel Memory, and utilize models that do not have OpenAI Assistants API features. Similar pivoting is expected for LangChain and LlamaIndex.
+
+The following table provides references to Assistants, Agents, and Planners in different frameworks. This table also shows how rich the ecosystem is in terminology and solutions.
+
+| Framework / SDK | Plugins / Tools / Functions | Assistants / Agents |
+| --- | --- | --- |
+| OpenAI | [Link](https://platform.openai.com/docs/assistants/tools/function-calling) | [Link](https://platform.openai.com/docs/assistants/overview) |
+| Azure Open AI | [Link](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/function-calling?tabs=python) | [Link](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/azure-openai-service-announces-assistants-api-new-models-for/ba-p/4049940) |
+| Semantic Kernel | [Link](https://learn.microsoft.com/en-us/semantic-kernel/agents/plugins/?tabs=Csharp) | [Link](https://learn.microsoft.com/en-us/semantic-kernel/agents/) |
+| LangChain | [Link](https://python.langchain.com/docs/modules/agents/tools/) | [Link](https://python.langchain.com/docs/modules/agents/) |
+| LlamaIndex | [Link](https://docs.llamaindex.ai/en/stable/module_guides/deploying/agents/tools/root.html) | [Link](https://docs.llamaindex.ai/en/stable/module_guides/deploying/agents/root.html) |
+
+
+
+
 
 # Vector DB
 
