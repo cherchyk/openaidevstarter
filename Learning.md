@@ -3,6 +3,7 @@
 
 ## Contents
 
+- [How to Leverage LLMs for Building Various Copilot Applications](#how-to-leverage-llms-for-building-various-copilot-applications)
 - [LLM](#llm)
 - [App Development](#app-development)
 - [Quality](#quality)
@@ -10,9 +11,36 @@
 - [Additional resources](#additional-resources)
 
 
+## How to Leverage LLMs for Building Various Copilot Applications
 
 To effectively integrate Large Language Models (LLMs) into app development, it's crucial to have a solid understanding of LLMs. Therefore, this section presents a list of learning resources. For optimal learning, it is advised to pursue the courses in the sequence provided below.
 
+
+- Base Model Knowledge: The LLM base models are trained on millions of data available publicly and hence can be used as-is for building copilots for many of the use cases. This is possible by the technique of prompt engineering – with simple prompts or with few shot learning (providing examples)
+Few of the possibilities (but not limited to) of building your own copilots that can do:
+    - Code generation:
+        - Generate code snippets or complete functions based on natural language queries or specifications.
+        - Provide general programming syntax and logic, while the user data can provide domain-specific details and preferences.
+        - Check for time complexity of the code.
+        - Generate documentation for the code.
+    - Content creation: 
+        - Create engaging and informative content for blogs, websites, social media, or newsletters based on keywords, topics, or prompts. 
+        - Generate content with linguistic fluency and diversity, while the user can provide style, tone, and audience awareness.
+    - Data analysis:
+        - Execute data analysis tasks such as data cleaning, visualization, exploration, or modeling based on natural language commands or questions. 
+        - Provide general statistical analysis and report generation from the structured data provided by the user along with suitable prompting.
+    - Text mining:
+        - Extract relevant entities, concepts, relations, or events from a given text or document, such as names, dates, locations, topics, sentiments, or opinions. 
+    -	Text Categorization & Summarization:
+        - Execute tasks like summarizing text data like reviews about products and services, categorization into different segments based on the description/text data associated and so on.
+- LLM On/With your data
+    1.	RAG pattern:
+        - Push approach - [RAG Pattern](/rag.md)
+        - Pull approach – [Using Function Calling](/Development.md#plugins-tools-and-functions)
+    2.	Fine-tuning (To do)
+        - Full finetuning
+        - Parameter efficient Fine- tuning
+    3.	Hybrid approach (RAG + Fine-tuning) (To do)
 
 ## LLM
 
