@@ -33,4 +33,3 @@ While Copilot Studio offers significant value, it does require some learning cur
     - [Product documentation ![external link](/content/imgs/external_link.png)](https://aka.ms/copilotstudiodocs)
     - [Community page ![external link](/content/imgs/external_link.png)](https://aka.ms/copilotstudiocommunity)
 
---------------------------------------------
